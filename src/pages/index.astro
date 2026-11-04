@@ -1,0 +1,259 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { SERVICES } from "../data/services";
+---
+
+<Layout title="Kodify Digital — Custom Software & IT Consultancy in Malaysia">
+  <!-- Hero -->
+  <section class="noise hero-field relative flex min-h-screen flex-col overflow-hidden pt-28" data-hero>
+    <div class="grid-bg absolute inset-0 opacity-50 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_20%,black,transparent)]"></div>
+    <div class="aurora-field" aria-hidden="true">
+      <div class="aurora-blob aurora-blob-one"></div>
+      <div class="aurora-blob aurora-blob-two"></div>
+      <div class="aurora-blob aurora-blob-three"></div>
+    </div>
+    <img src="/images/kodify-digital-mark.png" alt="" class="hero-watermark" aria-hidden="true" />
+    <div class="hero-atmosphere pointer-events-none absolute inset-0" aria-hidden="true">
+      <div class="hero-beam"></div>
+      <div class="hero-scanline"></div>
+      <span class="hero-crosshair hero-crosshair-one"></span>
+      <span class="hero-crosshair hero-crosshair-two"></span>
+      <span class="hero-circuit hero-circuit-one"></span>
+      <span class="hero-circuit hero-circuit-two"></span>
+      <span class="particle" style="width:6px; height:6px; top:22%; left:62%; animation-delay:-1s;"></span>
+      <span class="particle" style="width:4px; height:4px; top:68%; left:15%; animation-delay:-3.5s;"></span>
+      <span class="particle" style="width:5px; height:5px; top:40%; left:88%; animation-delay:-5s;"></span>
+      <span class="particle" style="width:3px; height:3px; top:78%; left:48%; animation-delay:-2s;"></span>
+    </div>
+    <div class="hero-readout pointer-events-none absolute right-6 top-32 hidden font-mono text-[10px] uppercase tracking-[0.18em] text-paper/35 lg:block" aria-hidden="true">
+      <span class="text-signal">SYS.01</span> / MALAYSIA NODE<br />
+      <span>coordinates 02.99 / 101.79</span>
+    </div>
+    <div class="relative mx-auto grid w-full max-w-7xl flex-1 items-center gap-16 px-6 py-16 lg:grid-cols-[1.08fr_.92fr] lg:px-10">
+      <div>
+      <p class="reveal flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em] text-signal">
+        <span class="h-1.5 w-1.5 rounded-full bg-signal"></span>
+        Software studio &middot; Kajang, Selangor
+      </p>
+
+      <h1 class="reveal mt-8 max-w-5xl font-display text-[13vw] font-semibold leading-[0.95] tracking-tight text-paper sm:text-[9vw] lg:text-[6.4vw]">
+        We build software that <span class="text-signal">fits</span> the way you work.
+      </h1>
+
+      <p class="reveal mt-8 max-w-xl text-lg text-paper/65" data-delay="80">
+        Kodify Digital designs and engineers custom software, web & mobile apps, and connected
+        systems for businesses across Malaysia — from first sketch to production, and everything
+        after.
+      </p>
+
+      <div class="reveal mt-10 flex flex-wrap items-center gap-5" data-delay="140">
+        <a
+          href="/contact"
+          data-magnetic
+          class="inline-flex items-center gap-3 rounded-sm bg-signal px-7 py-4 font-mono text-xs uppercase tracking-[0.14em] text-ink transition-transform"
+        >
+          Start a Project
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M1 13 13 1M13 1H4M13 1v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+        <a href="/portfolio" class="signal-underline pb-1 font-mono text-xs uppercase tracking-[0.14em] text-paper/80">
+          See our work
+        </a>
+      </div>
+      </div>
+
+      <div class="reveal hero-console" data-delay="220">
+        <div class="flex items-center justify-between border-b border-ink-line px-5 py-4">
+          <div class="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.16em] text-paper/50">
+            <span class="status-dot h-2 w-2 rounded-full bg-signal"></span>
+            KODIFY / CORE SYSTEMS
+          </div>
+          <span class="font-mono text-[10px] text-signal">LIVE</span>
+        </div>
+        <div class="space-y-6 p-5 sm:p-7">
+          <div class="flex items-end justify-between">
+            <div>
+              <p class="font-mono text-[10px] uppercase tracking-[0.16em] text-paper/40">Build capacity</p>
+              <p class="mt-2 font-display text-5xl font-semibold text-paper">∞</p>
+            </div>
+            <p class="font-mono text-xs text-signal">/ ready to ship</p>
+          </div>
+          <div class="telemetry-bars" aria-hidden="true">
+            {Array.from({ length: 24 }).map((_, i) => <span style={`--bar-height: ${28 + ((i * 17) % 68)}%`}></span>)}
+          </div>
+          <div class="space-y-3 border-t border-ink-line pt-5 font-mono text-[11px] text-paper/55">
+            <p><span class="text-signal">01</span> &nbsp; mapping workflow architecture...</p>
+            <p><span class="text-signal">02</span> &nbsp; deploying human-shaped interfaces...</p>
+            <p><span class="text-signal">03</span> &nbsp; <span class="text-paper">all systems operational</span><span class="cursor-block ml-1 inline-block h-3 w-1 bg-signal align-[-2px]"></span></p>
+          </div>
+        </div>
+        <div class="flex justify-between border-t border-ink-line px-5 py-3 font-mono text-[10px] uppercase tracking-[0.12em] text-paper/35">
+          <span>Latency 12ms</span>
+          <span data-live-time>00:00:00 MYT</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative border-t border-ink-line">
+      <div class="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-ink-line px-6 sm:grid-cols-4 lg:px-10">
+        {
+          [
+            ["7+", "Service lines"],
+            ["100%", "Custom-built"],
+            ["MY", "Based & remote-ready"],
+            ["24/7", "Systems monitored"],
+          ].map(([value, label], i) => (
+            <div class="reveal px-2 py-6 sm:px-6" data-delay={i * 80}>
+              <p class="font-display text-3xl font-semibold text-paper">{value}</p>
+              <p class="mt-1 font-mono text-[11px] uppercase tracking-[0.1em] text-paper/45">{label}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="overflow-hidden border-y border-ink-line bg-ink-soft py-5">
+    <div class="animate-marquee flex w-max gap-10 whitespace-nowrap">
+      {
+        Array.from({ length: 2 }).map(() => (
+          <div class="flex items-center gap-10">
+            {SERVICES.map((s) => (
+              <span class="flex items-center gap-3 font-mono text-sm uppercase tracking-[0.14em] text-paper/40">
+                {s.title}
+                <span class="text-signal">&#9670;</span>
+              </span>
+            ))}
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- Services overview -->
+  <section class="relative px-6 py-28 lg:px-10">
+    <div class="mx-auto max-w-7xl">
+      <div class="reveal flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+        <div>
+          <p class="font-mono text-xs uppercase tracking-[0.2em] text-signal">What we do</p>
+          <h2 class="mt-4 max-w-lg font-display text-4xl font-semibold tracking-tight text-paper sm:text-5xl">
+            One team, the full software stack.
+          </h2>
+        </div>
+        <a href="/services" class="signal-underline pb-1 font-mono text-xs uppercase tracking-[0.14em] text-paper/80">
+          All services &rarr;
+        </a>
+      </div>
+
+      <div class="mt-16 grid gap-px overflow-hidden rounded-2xl border border-ink-line bg-ink-line sm:grid-cols-2 lg:grid-cols-3">
+        {
+          SERVICES.map((service, i) => (
+            <a
+              href={`/services#${service.slug}`}
+              class="reveal group relative flex min-h-[15rem] flex-col justify-between bg-ink p-8 transition-colors hover:bg-ink-soft"
+              data-delay={(i % 3) * 90}
+            >
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-xs text-paper/40">{service.index}</span>
+                <svg
+                  class="h-4 w-4 -translate-y-1 translate-x-1 text-paper/30 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:translate-x-0 group-hover:text-signal group-hover:opacity-100"
+                  viewBox="0 0 14 14"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path d="M1 13 13 1M13 1H4M13 1v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-display text-xl font-semibold tracking-tight text-paper">
+                  {service.title}
+                </h3>
+                <p class="mt-3 text-sm leading-relaxed text-paper/55">{service.short}</p>
+              </div>
+            </a>
+          ))
+        }
+        <a
+          href="/services"
+          class="reveal group relative flex min-h-[15rem] flex-col justify-between bg-ink-soft p-8 transition-colors hover:bg-ink lg:col-span-2"
+          data-delay={(SERVICES.length % 3) * 90}
+        >
+          <span class="font-mono text-xs text-signal/70">08</span>
+          <div>
+            <h3 class="font-display text-xl font-semibold tracking-tight text-paper">
+              See the full picture
+            </h3>
+            <p class="mt-3 flex items-center gap-2 text-sm leading-relaxed text-paper/55">
+              Browse every service in detail
+              <svg
+                class="h-3.5 w-3.5 text-signal transition-transform duration-300 group-hover:translate-x-1"
+                viewBox="0 0 14 14"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path d="M1 13 13 1M13 1H4M13 1v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process band -->
+  <section class="relative overflow-hidden border-y border-ink-line bg-paper py-28 text-ink">
+    <div class="mx-auto max-w-7xl px-6 lg:px-10">
+      <p class="reveal font-mono text-xs uppercase tracking-[0.2em] text-ink/50">How we work</p>
+      <h2 class="reveal mt-4 max-w-xl font-display text-4xl font-semibold tracking-tight sm:text-5xl">
+        A process built for clarity, not ceremony.
+      </h2>
+
+      <div class="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          [
+            ["01", "Discover", "We dig into your workflow, constraints, and goals before writing a line of code."],
+            ["02", "Design", "Architecture and interface decisions made deliberately — not defaulted to a template."],
+            ["03", "Build", "Iterative delivery with working software in your hands early and often."],
+            ["04", "Support", "Launch is the start. We monitor, patch, and evolve the system with you."],
+          ].map(([num, title, copy], i) => (
+            <div class="reveal border-t border-ink/15 pt-6" data-delay={i * 80}>
+              <p class="font-mono text-sm text-ink/40">{num}</p>
+              <p class="mt-3 font-display text-xl font-semibold">{title}</p>
+              <p class="mt-2 text-sm leading-relaxed text-ink/60">{copy}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="relative overflow-hidden px-6 py-32 lg:px-10">
+    <div class="grid-bg absolute inset-0 opacity-30 [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,black,transparent)]"></div>
+    <div class="aurora-field" aria-hidden="true">
+      <div class="aurora-blob aurora-blob-one"></div>
+      <div class="aurora-blob aurora-blob-two"></div>
+    </div>
+    <div class="relative mx-auto max-w-4xl text-center">
+      <h2 class="reveal font-display text-5xl font-semibold leading-tight tracking-tight text-paper sm:text-6xl">
+        Have a project in mind? <span class="text-signal">Let's talk.</span>
+      </h2>
+      <p class="reveal mt-6 text-lg text-paper/60" data-delay="80">
+        Tell us what you're building — we'll reply with next steps, not a sales script.
+      </p>
+      <a
+        href="/contact"
+        data-magnetic
+        class="reveal mt-10 inline-flex items-center gap-3 rounded-sm bg-signal px-8 py-4 font-mono text-xs uppercase tracking-[0.14em] text-ink transition-transform"
+        data-delay="140"
+      >
+        Get in Touch
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M1 13 13 1M13 1H4M13 1v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </a>
+    </div>
+  </section>
+</Layout>

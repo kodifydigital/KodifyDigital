@@ -1,0 +1,109 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const values = [
+  {
+    title: "Built around your workflow",
+    copy: "We don't sell templates. Every engagement starts with how your team actually operates, not how a generic product assumes you do.",
+  },
+  {
+    title: "Engineering-led, always",
+    copy: "Every project is led by people who write the code — not passed through layers of account management before it reaches an engineer.",
+  },
+  {
+    title: "In it for the long run",
+    copy: "Launch day is the midpoint, not the finish line. We stay on to support, patch, and evolve what we build.",
+  },
+];
+---
+
+<Layout
+  title="About"
+  description="Kodify Digital is a software engineering studio based in Kajang, Selangor, building custom software and digital systems for businesses across Malaysia."
+>
+  <section class="noise relative overflow-hidden px-6 pb-20 pt-40 lg:px-10">
+    <div class="grid-bg absolute inset-0 opacity-40 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,black,transparent)]"></div>
+    <div class="aurora-field" aria-hidden="true">
+      <div class="aurora-blob aurora-blob-one"></div>
+      <div class="aurora-blob aurora-blob-two"></div>
+    </div>
+    <div class="relative mx-auto max-w-7xl">
+      <p class="reveal font-mono text-xs uppercase tracking-[0.2em] text-signal">About Kodify Digital</p>
+      <h1 class="reveal mt-6 max-w-3xl font-display text-5xl font-semibold leading-[1.02] tracking-tight text-paper sm:text-6xl">
+        A small studio, run like an engineering team — not an agency.
+      </h1>
+      <p class="reveal mt-6 max-w-2xl text-lg leading-relaxed text-paper/65" data-delay="80">
+        Kodify Digital is a software development and IT consultancy studio based in Kajang,
+        Selangor. We work with businesses across Malaysia to design, build, and maintain the
+        custom software, applications, and integrations that run their operations — without the
+        overhead of a large agency or the guesswork of a freelancer.
+      </p>
+    </div>
+  </section>
+
+  <section class="relative px-6 py-20 lg:px-10">
+    <div class="mx-auto max-w-7xl">
+      <div class="grid gap-px overflow-hidden rounded-2xl border border-ink-line bg-ink-line sm:grid-cols-3">
+        {
+          values.map((v, i) => (
+            <div class="reveal bg-ink p-8" data-delay={i * 90}>
+              <span class="font-mono text-xs text-signal/70">0{i + 1}</span>
+              <h3 class="mt-4 font-display text-xl font-semibold tracking-tight text-paper">{v.title}</h3>
+              <p class="mt-3 text-sm leading-relaxed text-paper/55">{v.copy}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="relative overflow-hidden border-y border-ink-line bg-paper px-6 py-24 text-ink lg:px-10">
+    <div class="mx-auto grid max-w-7xl gap-16 lg:grid-cols-2 lg:items-center">
+      <div>
+        <p class="reveal font-mono text-xs uppercase tracking-[0.2em] text-ink/50">Where we work</p>
+        <h2 class="reveal mt-4 font-display text-4xl font-semibold tracking-tight sm:text-5xl">
+          Based in Kajang. Working across Malaysia.
+        </h2>
+        <p class="reveal mt-6 max-w-lg text-lg leading-relaxed text-ink/60" data-delay="80">
+          Our home base is Kajang, Selangor — close enough to the Klang Valley for on-site work
+          when it matters, and fully set up for remote collaboration when it doesn't.
+        </p>
+        <div class="reveal mt-8 flex flex-col gap-2 font-mono text-sm text-ink/70" data-delay="140">
+          <p>Kajang, Selangor, Malaysia</p>
+          <a href="mailto:zulhamdimalek@gmail.com" class="signal-underline w-fit pb-1">zulhamdimalek@gmail.com</a>
+          <a href="tel:+60135818932" class="signal-underline w-fit pb-1">013-581 8932</a>
+        </div>
+      </div>
+
+      <div class="reveal relative aspect-square w-full max-w-md justify-self-center overflow-hidden rounded-3xl border border-ink/10 bg-ink" data-delay="100">
+        <div class="grid-bg absolute inset-0 opacity-60"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="relative flex h-40 w-40 items-center justify-center">
+            <div class="animate-spin-slow absolute inset-0 rounded-full border border-dashed border-signal/40"></div>
+            <span class="h-3 w-3 rounded-full bg-signal shadow-[0_0_40px_8px_rgba(18,100,232,0.45)]"></span>
+          </div>
+        </div>
+        <p class="absolute bottom-6 left-6 font-mono text-xs uppercase tracking-[0.14em] text-paper/60">
+          3.0° N, 101.7° E
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="relative overflow-hidden px-6 py-28 text-center lg:px-10">
+    <h2 class="reveal mx-auto max-w-2xl font-display text-4xl font-semibold tracking-tight text-paper sm:text-5xl">
+      Want to know if we're the right fit? <span class="text-signal">Ask us anything.</span>
+    </h2>
+    <a
+      href="/contact"
+      data-magnetic
+      class="reveal mt-8 inline-flex items-center gap-3 rounded-sm bg-signal px-8 py-4 font-mono text-xs uppercase tracking-[0.14em] text-ink transition-transform"
+      data-delay="80"
+    >
+      Get in Touch
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M1 13 13 1M13 1H4M13 1v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </a>
+  </section>
+</Layout>

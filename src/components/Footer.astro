@@ -1,0 +1,62 @@
+---
+import { NAV_LINKS, SITE } from "../data/site";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="relative overflow-hidden border-t border-ink-line bg-ink-soft">
+  <div class="grid-bg absolute inset-0 opacity-40 [mask-image:linear-gradient(to_bottom,transparent,black)]"></div>
+
+  <div class="relative mx-auto max-w-7xl px-6 py-20 lg:px-10">
+    <div class="grid gap-16 lg:grid-cols-[1.4fr_1fr_1fr]">
+      <div>
+        <p class="font-display text-3xl font-semibold tracking-tight text-paper">
+          Let's build something<br /> that actually fits.
+        </p>
+        <a
+          href="/contact"
+          data-magnetic
+          class="mt-8 inline-flex items-center gap-3 rounded-sm bg-signal px-6 py-3 font-mono text-xs uppercase tracking-[0.14em] text-ink transition-transform"
+        >
+          Start a Project
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M1 13 13 1M13 1H4M13 1v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+
+      <div>
+        <p class="font-mono text-xs uppercase tracking-[0.14em] text-paper/50">Navigate</p>
+        <ul class="mt-5 flex flex-col gap-3">
+          {
+            NAV_LINKS.map((link) => (
+              <li>
+                <a href={link.href} class="text-paper/80 transition-colors hover:text-signal">
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div>
+        <p class="font-mono text-xs uppercase tracking-[0.14em] text-paper/50">Contact</p>
+        <ul class="mt-5 flex flex-col gap-3 text-paper/80">
+          <li>
+            <a href={`mailto:${SITE.email}`} class="transition-colors hover:text-signal">{SITE.email}</a>
+          </li>
+          <li>
+            <a href={`tel:${SITE.phoneHref}`} class="transition-colors hover:text-signal">{SITE.phone}</a>
+          </li>
+          <li>{SITE.address}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-20 flex flex-col items-start justify-between gap-4 border-t border-ink-line pt-8 text-xs text-paper/40 sm:flex-row sm:items-center">
+      <p>&copy; {year} Kodify Digital. All rights reserved.</p>
+      <p class="font-mono">Kajang, Selangor &mdash; Malaysia</p>
+    </div>
+  </div>
+</footer>

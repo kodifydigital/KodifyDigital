@@ -1,0 +1,77 @@
+---
+import { NAV_LINKS, SITE } from "../data/site";
+
+const { pathname } = Astro.url;
+---
+
+<header data-site-header class="fixed inset-x-0 top-0 z-50">
+  <div class="header-bg absolute inset-0 -z-10 transition-all duration-300"></div>
+
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
+    <a href="/" class="group flex items-center gap-3 font-display text-xl font-semibold tracking-tight text-paper">
+      <span class="logo-image transition-transform duration-300 group-hover:scale-105" aria-hidden="true">
+        <img src="/images/kodify-digital-mark.png" alt="" />
+      </span>
+      Kodify<span class="text-signal">.</span>Digital
+    </a>
+
+    <nav class="hidden items-center gap-9 lg:flex">
+      {
+        NAV_LINKS.map((link) => {
+          const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
+          return (
+            <a
+              href={link.href}
+              class:list={[
+                "font-mono text-xs uppercase tracking-[0.14em] transition-colors signal-underline pb-1",
+                isActive ? "text-signal" : "text-paper/70 hover:text-paper",
+              ]}
+              aria-current={isActive ? "page" : undefined}
+            >
+              {link.label}
+            </a>
+          );
+        })
+      }
+    </nav>
+
+    <a
+      href="/contact"
+      class="hidden rounded-sm border border-ink-line px-5 py-2.5 font-mono text-xs uppercase tracking-[0.14em] text-paper transition-colors hover:border-signal hover:text-signal lg:inline-flex"
+    >
+      Start a Project
+    </a>
+
+    <button
+      data-nav-toggle
+      type="button"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+      class="relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-1.5 lg:hidden"
+    >
+      <span class="bar-top h-px w-6 bg-paper transition-transform duration-300"></span>
+      <span class="bar-bottom h-px w-6 bg-paper transition-transform duration-300"></span>
+    </button>
+  </div>
+
+  <nav
+    data-nav-menu
+    class="fixed inset-0 top-0 z-40 flex flex-col justify-center gap-8 bg-ink px-8 transition-[transform,opacity] duration-500 lg:hidden"
+  >
+    {
+      NAV_LINKS.map((link, i) => (
+        <a
+          href={link.href}
+          class="font-display text-4xl font-semibold tracking-tight text-paper transition-colors hover:text-signal"
+        >
+          <span class="mr-3 font-mono text-sm text-signal/70">0{i + 1}</span>
+          {link.label}
+        </a>
+      ))
+    }
+    <div class="mt-10 flex flex-col gap-1 font-mono text-sm text-paper/60">
+      <a href={`tel:${SITE.phoneHref}`} class="hover:text-signal">{SITE.phone}</a>
+      <a href={`mailto:${SITE.email}`} class="hover:text-signal">{SITE.email}</a>
+    </div>
+  </nav>
+</header>

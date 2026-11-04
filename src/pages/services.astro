@@ -1,0 +1,85 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { SERVICES } from "../data/services";
+---
+
+<Layout
+  title="Services"
+  description="Custom software, web & mobile apps, IT consultancy, system integration, API integration, and ongoing maintenance — from Kodify Digital in Kajang, Selangor."
+>
+  <section class="noise relative overflow-hidden px-6 pb-20 pt-40 lg:px-10">
+    <div class="grid-bg absolute inset-0 opacity-40 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,black,transparent)]"></div>
+    <div class="aurora-field" aria-hidden="true">
+      <div class="aurora-blob aurora-blob-one"></div>
+      <div class="aurora-blob aurora-blob-two"></div>
+    </div>
+    <div class="relative mx-auto max-w-7xl">
+      <p class="reveal font-mono text-xs uppercase tracking-[0.2em] text-signal">Services</p>
+      <h1 class="reveal mt-6 max-w-3xl font-display text-5xl font-semibold leading-[1.02] tracking-tight text-paper sm:text-6xl">
+        Everything you need to ship and run software, under one roof.
+      </h1>
+      <p class="reveal mt-6 max-w-xl text-lg text-paper/60" data-delay="80">
+        Seven service lines, one accountable team — from the first architecture decision to the
+        2am alert three years later.
+      </p>
+    </div>
+  </section>
+
+  <section class="relative px-6 pb-28 lg:px-10">
+    <div class="mx-auto max-w-7xl divide-y divide-ink-line border-t border-ink-line">
+      {
+        SERVICES.map((service) => (
+          <div id={service.slug} class="reveal grid gap-8 py-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] lg:gap-16 lg:py-20">
+            <div class="flex items-start gap-6">
+              <span class="font-mono text-sm text-signal/80">{service.index}</span>
+              <h2 class="font-display text-3xl font-semibold tracking-tight text-paper sm:text-4xl">
+                {service.title}
+              </h2>
+            </div>
+
+            <div>
+              <p class="max-w-2xl text-lg leading-relaxed text-paper/65">{service.description}</p>
+              <ul class="mt-8 grid gap-3 sm:grid-cols-2">
+                {service.bullets.map((bullet) => (
+                  <li class="flex items-start gap-3 text-sm text-paper/70">
+                    <span class="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-signal" />
+                    {bullet}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="/contact"
+                class="signal-underline mt-8 inline-flex items-center gap-2 pb-1 font-mono text-xs uppercase tracking-[0.14em] text-paper"
+              >
+                Discuss this service &rarr;
+              </a>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="relative overflow-hidden border-y border-ink-line bg-paper px-6 py-24 text-ink lg:px-10">
+    <div class="mx-auto max-w-4xl text-center">
+      <h2 class="reveal font-display text-4xl font-semibold tracking-tight sm:text-5xl">
+        Not sure which service you need?
+      </h2>
+      <p class="reveal mt-5 text-lg text-ink/60" data-delay="80">
+        Most projects touch more than one. Tell us the problem — we'll map the right mix of
+        services to solve it.
+      </p>
+      <a
+        href="/contact"
+        data-magnetic
+        class="reveal mt-8 inline-flex items-center gap-3 rounded-sm bg-ink px-7 py-4 font-mono text-xs uppercase tracking-[0.14em] text-paper transition-transform"
+        data-delay="140"
+      >
+        Talk to us
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M1 13 13 1M13 1H4M13 1v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </a>
+    </div>
+  </section>
+</Layout>
